@@ -1,16 +1,12 @@
 from flask import Flask
+import os
 
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def home():
-    return """
-    <h1>Proyecto DevOps</h1>
-    <h2>Sistemas Operativos II</h2>
-    <p>Docker + CI/CD funcionando</p>
-    <h1>CI/CD funcionando correctamente</h1>
-    """
+    return "Proyecto DevOps funcionando en Render"
 
-app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
