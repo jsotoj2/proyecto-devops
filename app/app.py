@@ -2,6 +2,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
+<h1>CI/CD funcionando correctamente</h1>
+
 @app.route('/')
 def home():
     return """
